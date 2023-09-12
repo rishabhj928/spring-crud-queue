@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class RabbitConsume {
     
-    @RabbitListener(queues = {"${rabbitmq.queuename}"})
+    @RabbitListener(queues = {"${spring.rabbitmq.template.default-receive-queue}"})
     public void receive(@Payload String message) {
         System.out.println("message consumed - " + message);
     }

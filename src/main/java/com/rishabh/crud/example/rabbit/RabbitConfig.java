@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitConfig {
     
-    @Value("${rabbitmq.queuename}")
+    @Value("${spring.rabbitmq.template.default-receive-queue}")
     private String queueName;
 
     @Bean
