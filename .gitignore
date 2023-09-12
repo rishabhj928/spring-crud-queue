@@ -1,0 +1,57 @@
+# Compiled class file
+target/
+
+# IDE files
+.idea/
+*.iml
+*.iws
+
+# Gradle files
+.gradle/
+build/
+
+# Maven files
+.mvn/
+mvnw
+mvnw.cmd
+mvn/
+
+# Spring Boot properties file
+application.properties
+
+# Log files
+logs/
+
+# macOS
+.DS_Store
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Visual Studio Code
+.vscode/
+
+# IntelliJ
+*.iws
+*.ipr
+*.iws.iml
+
+# Thumbnails
+Thumbs.db
+
+# Package Files
+*.jar
+*.war
+*.nar
+*.zip
+*.tar.gz
+*.rar
+
+# Log files
+*.log
+
+# Maven Wrapper
+.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
