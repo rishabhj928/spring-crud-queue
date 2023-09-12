@@ -1,6 +1,8 @@
 package com.rishabh.crud.example.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.stereotype.Service;
 
 import com.rishabh.crud.example.entity.Product;
@@ -9,6 +11,7 @@ import com.rishabh.crud.example.repository.ProductRepository;
 import java.util.List;
 
 @Service
+@EnableCaching
 public class ProductService {
     @Autowired
     private ProductRepository repository;
@@ -21,7 +24,14 @@ public class ProductService {
         return repository.saveAll(products);
     }
 
+    @Cacheable("test")
+    public String testCache() {
+        doLongRunningTask();
+        return "OK";
+    }
+
     public List<Product> getProducts() {
+        doLongRunningTask();
         return repository.findAll();
     }
 
@@ -47,5 +57,12 @@ public class ProductService {
         return repository.save(existingProduct);
     }
 
+    private void doLongRunningTask() {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

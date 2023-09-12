@@ -3,10 +3,12 @@ package com.rishabh.crud.example;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.kafka.annotation.EnableKafka;
+import org.springframework.cache.annotation.EnableCaching;
+// import org.springframework.kafka.annotation.EnableKafka;
 
 @EnableRabbit
-@EnableKafka
+// @EnableKafka
+@EnableCaching
 @SpringBootApplication
 public class SpringBootCrudExample2Application {
 

@@ -76,4 +76,9 @@ public class ProductController {
         return "Kafka Producer - " + message;
     }
 
+    @GetMapping("/redis")
+    public String redis() {
+        return service.testCache();
+    }
+
 }
